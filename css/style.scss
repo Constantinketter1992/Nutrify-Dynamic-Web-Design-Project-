@@ -1,0 +1,260 @@
+body {
+  background: white;
+  padding-top: 0px; }
+@mixin icon {
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position: center;
+ }
+ @mixin success{
+   &.success{
+     background-image: url("../img/icon_success.png");
+   }
+ }
+ @mixin progress_line{
+   &:after{
+     content:"";
+     background-image: url("../img/progress_line.png");
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: right;
+     display: inline-block;
+     width: 20vw;
+     height: 50px;
+     margin-left: 50px;
+   }
+ }
+ @mixin progress_line_active{
+   &:after{
+     background-image: url("../img/progress_line_active.png");
+   }
+ }
+#wizard{
+  list-style-type: none;
+  margin-left: 10vw;
+  width: 80vw;
+  padding-top:  100px;
+  .tabs li{
+    display: inline-block;
+    //list-style-type: none;
+    a{
+      display:block;
+      width: 50px;
+      height: 50px;
+      &.Register{
+        //background: url("../img/icon_register.png") contain no-repeat;
+        background-image:url("../img/icon_register.png");
+        @include icon;
+        @include progress_line;
+        @include success;
+      }
+      &.Profile{
+        margin-left: 20vw;
+        background-image:url("../img/icon_profile.png");
+        @include icon;
+        @include progress_line;
+        @include success;
+      }
+      &.Medical{
+        margin-left: 20vw;
+        background-image: url("../img/icon_medical.png");
+        @include icon;
+        @include progress_line;
+        @include success;
+      }
+      &.Goal{
+        margin-left: 20vw;
+        background-image: url("../img/icon_goal.png");
+        @include icon;
+        @include success;
+      }
+    }
+  }
+  .content{
+    display: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 30px;
+    &.active{
+      display: block;
+    }
+    p{
+      display: inline-block;
+    }
+    li{
+      list-style-type: none;
+    }
+    input{
+      border: 1px solid black;
+      border-radius: 10px;
+      height: 50px;
+      width: 200px;
+      padding:5px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    input[type=radio]{
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      padding:0;
+      //margin: 0 20px 0 20px;
+    }
+    input[type=checkbox]{
+      height: 30px;
+      width: 30px;
+      padding:0;
+    }
+  }
+}
+
+
+
+
+nav.navbar {
+	padding-top:20px;
+	height: auto;
+	background-color: #000000;
+	border: none;
+	margin-bottom: 0px;
+	text-align: center;
+  .input{
+
+  }
+}
+.navbar-default .navbar-nav .active a {
+	background-color: #000000;
+/*	border-bottom: solid;*/
+}
+.navbar-default .navbar-nav .active a:hover {
+  background-color: transparent; }
+.navbar-default .navbar-nav .active a:focus {
+  background-color: transparent; }
+
+
+.carousel {
+  height: auto; }
+
+.carousel .item {
+
+  height: auto;
+  background-color: #777; }
+
+.carousel-control:hover {
+  background: transparent; }
+
+
+.carrousel img {
+/*  display: block;*/
+  width:100%;
+  height: auto;
+}
+
+.container-fluid .navbar-header .logo {
+  width:250px;
+  height: auto;
+  padding-left: 100px;
+  padding-bottom: 10px;
+	padding-top: 20px;
+}
+.container-fluid #collapse .nav.navbar-nav.navbar-right {
+	padding-top:80px;
+	padding-right:140px;
+    padding-left:auto;
+}
+
+.nav.navbar-nav.navbar-right .navbar-form.navbar-right .form-control {
+	font-size: 0.8em;
+	height: 28px;
+	width: 100px;
+}
+.nav.navbar-nav.navbar-right .navbar-form.navbar-right .btn.btn-success {
+	height: 28px;
+	width: 70px;
+	text-align: center;
+	padding-top:2px;
+}
+
+.CharImg {
+	margin-left: -20px;
+	margin-top: 10px;
+
+}
+.container.charts {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#bs-example-navbar-collapse-1 {
+	background-color: black;
+	padding-left: 400px;
+}
+
+@mixin progress{
+  margin: 20px;
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
+}
+
+#progress_calories {
+  @include progress;
+}
+#progress_carbs {
+  @include progress;
+}
+#progress_protein {
+  @include progress;
+}
+#progress_fiber {
+  @include progress;
+}
+#progress_sugar {
+  @include progress;
+}
+#progress_cholesterol {
+  @include progress;
+}
+#progress_fat {
+  @include progress;
+}
+#progress_saturated {
+  @include progress;
+}
+#progress_unsaturated {
+  @include progress;
+}
+#progress_potassium {
+  @include progress;
+}
+#progress_sodium {
+  @include progress;
+}
+
+#txtHint{
+  overflow:scroll;
+  max-height: 30vh;
+}
+
+.line{
+  border-bottom-style: ridge;
+  background-color: #f1f1f1;
+  text-color: #a1a1a1;
+  &:hover{
+    background-color: #e2e2e2;
+  }
+  .col-xs-2{
+    background-position: center !important;
+  }
+  #add{
+    background-image: url("../img/add.png");
+    background-position: right center;
+    background-size: contain;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    &:hover{
+      cursor:pointer;
+    }
+  }
+}
